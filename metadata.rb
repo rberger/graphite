@@ -9,8 +9,8 @@ supports "ubuntu"
 
 depends "python"
 depends "apache2"
+depends "runit"
 
-suggests "runit"
 suggests "systemd"
 suggests "s6"
 
