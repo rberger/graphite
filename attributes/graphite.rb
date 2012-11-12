@@ -21,3 +21,4 @@ default['graphite']['url_aliases'] = ["graphite1.runa.com"]
 default['graphite']['listen_port'] = "80"
 default['graphite']['base_dir'] = "/opt/graphite"
 default['graphite']['doc_root'] = "/opt/graphite/webapp"
+default['graphite']['python_media_path'] =  "/usr/lib/python2.7/dist-packages/django"

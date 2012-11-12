@@ -15,7 +15,7 @@ NameVirtualHost *:<%= node['graphite']['listen_port'] %>
 
         <Location "/">
                 SetHandler python-program
-                PythonPath "['<%= node['graphite']['base_dir'] %>'] + sys.path"
+                PythonPath "['<%= node['graphite']['doc_root'] %>'] + sys.path"
                 PythonHandler django.core.handlers.modpython
                 SetEnv DJANGO_SETTINGS_MODULE graphite.settings
                 PythonDebug Off
@@ -40,6 +40,6 @@ NameVirtualHost *:<%= node['graphite']['listen_port'] %>
 	# must change @DJANGO_ROOT@ to be the path to your django
 	# installation, which is probably something like:
 	# /usr/lib/python2.6/site-packages/django
-        Alias /media/ "/usr/lib/python2.7/dist-packages/django/contrib/admin/media"
+        Alias /media/ "#{node['python_media_path']}/contrib/admin/media/"
 
 </VirtualHost>
